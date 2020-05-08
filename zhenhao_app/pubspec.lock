@@ -260,13 +260,6 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "0.1.1+2"
-  fish_redux:
-    dependency: "direct main"
-    description:
-      name: fish_redux
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "0.3.3"
   fixnum:
     dependency: transitive
     description:
@@ -312,13 +305,20 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_uploader:
+    dependency: "direct main"
+    description:
+      name: flutter_uploader
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "1.2.0"
   flutter_web_plugins:
     dependency: transitive
     description: flutter
     source: sdk
     version: "0.0.0"
   fluttertoast:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: fluttertoast
       url: "https://pub.flutter-io.cn"
@@ -450,6 +450,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "0.9.6+3"
+  multi_image_picker:
+    dependency: "direct main"
+    description:
+      name: multi_image_picker
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "4.6.7"
   mvvm:
     dependency: "direct main"
     description:
@@ -470,7 +477,7 @@ packages:
       name: node_io
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "1.0.1+2"
+    version: "1.1.0"
   package_config:
     dependency: transitive
     description:
@@ -583,6 +590,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "2.0.5"
+  rxdart:
+    dependency: "direct main"
+    description:
+      name: rxdart
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.21.0"
   shared_preferences:
     dependency: "direct main"
     description:
@@ -735,6 +749,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "0.1.1+4"
+  uuid:
+    dependency: "direct main"
+    description:
+      name: uuid
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "2.0.4"
   vector_math:
     dependency: transitive
     description:
