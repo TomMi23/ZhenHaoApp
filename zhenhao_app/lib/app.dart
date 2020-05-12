@@ -8,6 +8,7 @@ import 'main_provide.dart';
 
 
 
+// ignore: must_be_immutable
 class App extends PageProvideNode {
 
   App() {
@@ -48,6 +49,7 @@ class _AppState extends State<_AppContentPage> with TickerProviderStateMixin<_Ap
   void initState() {
     // TODO: implement initState
     super.initState();
+    debugPrint("首页");
 
     _provide = MainProvide.instance;
 

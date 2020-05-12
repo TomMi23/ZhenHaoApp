@@ -1,3 +1,5 @@
+import 'package:app/route/named_router.dart';
+import 'package:app/view/splash/splash_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -16,7 +18,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: new App(),
+      //home: new SplashPage(),
+      initialRoute: '/',
+      routes: NamedRouter.initRoutes(),
       debugShowCheckedModeBanner: false, // 去除debug旗标
       theme: new ThemeData(
           primaryColor: new Color.fromRGBO(255, 255, 255, 1),

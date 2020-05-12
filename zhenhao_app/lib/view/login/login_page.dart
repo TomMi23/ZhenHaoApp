@@ -287,24 +287,24 @@ class _LoginContentPage extends State<LoginPage> {
     })
         .doOnCancel(() {})
         .listen((data) {
-      _loading.hide(context);
-      if (data.success) {
-        var res = data.data as Map;
+          _loading.hide(context);
+          if (data.success) {
+            var res = data.data as Map;
 
-        /// 存储用户信息
-        AppConfig.userTools.setUserData(res).then((success) {
-          if (success) {
-            Fluttertoast.showToast(
-                msg: "登录成功", gravity: ToastGravity.CENTER);
-            Future.delayed(Duration(seconds: 1), () {
-              this._goback(true);
+            /// 存储用户信息
+            AppConfig.userTools.setUserData(res).then((success) {
+              if (success) {
+                Fluttertoast.showToast(
+                    msg: "登录成功", gravity: ToastGravity.CENTER);
+                Future.delayed(Duration(seconds: 1), () {
+                  this._goback(true);
+                });
+              }
             });
           }
+        }, onError: (e) {
+          _loading.hide(context);
         });
-      }
-    }, onError: (e) {
-      _loading.hide(context);
-    });
     _subscriptions.add(s);
   }
 

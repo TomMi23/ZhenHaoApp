@@ -57,7 +57,15 @@ class AppTools {
     return _spf.setStringList(ConstConfig.SEARCH_HISTORY_LIST, []);
   }
 
+  // 存储Splash数据
+  Future<bool> setSplashData(isGuide) {
+    return _spf.setBool(ConstConfig.KEY_GUIDE, isGuide);
+  }
 
-
+  // 获取Splash数据
+  bool getSplashData() {
+    var mapStr = _spf.getBool(ConstConfig.KEY_GUIDE) ?? false;
+    return mapStr;
+  }
 
 }
