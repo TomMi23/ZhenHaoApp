@@ -1,10 +1,13 @@
 import 'package:app/route/named_router.dart';
+import 'package:app/route/routers.dart';
 import 'package:app/view/splash/splash_page.dart';
+import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'app.dart';
 import 'base/app_config.dart';
+import 'config/application.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -14,13 +17,20 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
+  MyApp(){
+    final router = Router();
+    Routers.configureRoutes(router);
+    Application.router = router;
+  }
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       //home: new SplashPage(),
-      initialRoute: '/',
-      routes: NamedRouter.initRoutes(),
+      //initialRoute: '/',
+      //routes: NamedRouter.initRoutes(),
+      onGenerateRoute: Application.router.generator,
+
       debugShowCheckedModeBanner: false, // 去除debug旗标
       theme: new ThemeData(
           primaryColor: new Color.fromRGBO(255, 255, 255, 1),

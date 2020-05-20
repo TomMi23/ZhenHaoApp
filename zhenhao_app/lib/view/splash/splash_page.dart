@@ -2,6 +2,7 @@
 import 'dart:async';
 
 import 'package:app/base/app_config.dart';
+import 'package:app/utils/navigator_util.dart';
 import 'package:app/viewmodel/splash/splash_provide.dart';
 import 'package:flukit/flukit.dart';
 import 'package:flutter/cupertino.dart';
@@ -32,9 +33,10 @@ class _SplashPageState extends State<SplashPage>{
   // 跳转主页
   void _goMain() {
     //跳转后不再返回
-    Navigator.of(context).pushAndRemoveUntil(
-        new MaterialPageRoute(builder: (context) => new App()
-        ), (route) => route == null);
+    NavigatorUtils.goMainPage(context);
+//    Navigator.of(context).pushAndRemoveUntil(
+//        new MaterialPageRoute(builder: (context) => new App()
+//        ), (route) => route == null);
   }
 
   void _initAsync() async  {
