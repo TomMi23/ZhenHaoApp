@@ -8,6 +8,7 @@ class Routers {
   static String home = "/home";
   static String login = "/login";
   static String myPage = "/mypage";
+  static String search="/search";
 
 
   static void configureRoutes(Router router) {
@@ -21,5 +22,6 @@ class Routers {
     router.define(home, handler: homeHandler);
     router.define(login, handler: loginHandler);
     router.define(myPage, handler: myPageHandler);
+    router.define(search, handler: searchPageHandler);
   }
 }

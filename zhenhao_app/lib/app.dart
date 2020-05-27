@@ -2,6 +2,7 @@ import 'package:app/view/home/home_page.dart';
 import 'package:app/view/login/login_page.dart';
 import 'package:app/view/my/my_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/screenutil.dart';
 import 'package:provider/provider.dart';
 import 'base/page_provide_node.dart';
 import 'main_provide.dart';
@@ -77,6 +78,8 @@ class _AppState extends State<_AppContentPage> with TickerProviderStateMixin<_Ap
 
   @override
   Widget build(BuildContext context) {
+    //这个要放在这里初始化一下否则后面会报错
+    ScreenUtil.init(context);
     return ChangeNotifierProvider(
       builder: (context) => _provide,
       child: new Scaffold(

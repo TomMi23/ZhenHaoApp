@@ -77,39 +77,39 @@ class LoginProvide extends BaseProvide {
   final LoginRepo _repo = LoginRepo();
   /// 登录
   Observable login() {
-    var body = {
-      'userName': this.userName,
-      'email': this.email,
-      'passWord': this.password
-    };
-    return _repo
-        .login(body)
-        .doOnData((result) {
-    })
-        .doOnError((e, stacktrace) {
-    })
-        .doOnListen(() {
-    })
-        .doOnDone(() {
-    });
+//    var body = {
+//      'userName': this.userName,
+//      'email': this.email,
+//      'passWord': this.password
+//    };
+//    return _repo
+//        .login(body)
+//        .doOnData((result) {
+//    })
+//        .doOnError((e, stacktrace) {
+//    })
+//        .doOnListen(() {
+//    })
+//        .doOnDone(() {
+//    });
   }
 
   // 重置密码
   Observable resetPassword() {
-    var body = {
-      'userName': this.userName,
-      'email': this.email,
-      'passWord': this.password
-    };
-    return _repo
-        .resetPassword(body)
-        .doOnData((result) {
-    })
-        .doOnError((e, stacktrace) {
-    })
-        .doOnListen(() {
-    })
-        .doOnDone(() {
-    });
+//    var body = {
+//      'userName': this.userName,
+//      'email': this.email,
+//      'passWord': this.password
+//    };
+//    return _repo
+//        .resetPassword(body)
+//        .doOnData((result) {
+//    })
+//        .doOnError((e, stacktrace) {
+//    })
+//        .doOnListen(() {
+//    })
+//        .doOnDone(() {
+//    });
   }
 }

@@ -24,6 +24,10 @@ class NavigatorUtils {
     Application.router.navigateTo(context, Routers.myPage,
         transition: TransitionType.inFromRight);
   }
+  static goSearchPage(BuildContext context) {
+    Application.router.navigateTo(context, Routers.search,
+        transition: TransitionType.inFromRight);
+  }
 
 
 }
