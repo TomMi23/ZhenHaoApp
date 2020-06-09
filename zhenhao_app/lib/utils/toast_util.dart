@@ -12,6 +12,7 @@ class ToastUtil {
         timeInSecForIos: 1,
         backgroundColor: Colors.black,
         textColor: Colors.white,
-        fontSize: ScreenUtil().setSp(40.0));
+        fontSize: ScreenUtil().setSp(40.0)//设置Toast字体大小
+    );
   }
 }
