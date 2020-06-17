@@ -1,18 +1,19 @@
 
 import 'package:app/config/string.dart';
-import 'package:app/view/home/entity/swiper_entity.dart';
+import 'package:app/view/home/entity/home_entity.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/screenutil.dart';
 
 import 'cached_image.dart';
 
-class SwiperView extends StatelessWidget {
+// ignore: must_be_immutable
+class MySwiperView extends StatelessWidget {
   List<SwipeAdvInfoList> bannerData = new List();
   int size;
   double viewHeight;
 
-  SwiperView(this.bannerData, this.size, this.viewHeight);
+  MySwiperView(this.bannerData, this.size, this.viewHeight);
 
   @override
   Widget build(BuildContext context) {
@@ -28,6 +29,7 @@ class SwiperView extends StatelessWidget {
       )
           : Swiper(
         onTap: (index) {
+          //TODO 这里点击跳转
 //          NavigatorUtils.goWebView(
 //              context, bannerData[index].name, bannerData[index].link);
         },

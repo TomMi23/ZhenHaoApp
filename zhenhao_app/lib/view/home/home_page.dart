@@ -1,8 +1,11 @@
+import 'package:app/config/string.dart';
 import 'package:app/main/dialog/dialog.dart';
 import 'package:app/utils/navigator_util.dart';
 import 'package:app/utils/toast_util.dart';
 import 'package:app/view/home/entity/swiper_entity.dart';
 import 'package:app/view/home/service/home_service.dart';
+import 'package:app/view/widgets/Category_view.dart';
+import 'package:app/view/widgets/groupbuy_view.dart';
 import 'package:app/view/widgets/swiper_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyrefresh/bezier_bounce_footer.dart';
@@ -37,9 +40,9 @@ class _HomeContentPage extends State<HomePage> {
 
   _queryHomeData() {
 
-    _homeService.queryHomeSwiperData((success) {
+    _homeService.queryHomeData((success) {
       setState(() {
-        _homeSwiperEntity = success;
+        _homeEntity = success;
         _controller.finishRefresh();
       });
     }, (error) {
@@ -70,7 +73,7 @@ class _HomeContentPage extends State<HomePage> {
 
   //中间部分
   Widget contentWidget(){
-    return _homeSwiperEntity == null ? LoadingDialog()
+    return _homeEntity == null ? LoadingDialog()
         : Container(
           child: EasyRefresh(
             controller: _controller,//控制器
@@ -81,8 +84,20 @@ class _HomeContentPage extends State<HomePage> {
             child: SingleChildScrollView(
               child: Column(
                 children: <Widget>[
-                  SwiperView(_homeSwiperEntity.swipeAdvInfoList, _homeSwiperEntity.swipeAdvInfoList.length,
+                  //滚动图片
+                  MySwiperView(_homeEntity.swipeAdvInfoList, _homeEntity.swipeAdvInfoList.length,
                       ScreenUtil().setHeight(360.0)),
+                  Padding(
+                    padding: EdgeInsets.only(top: 10.0),
+                  ),
+                  //九宫格
+                  CategoryMenu(_homeEntity.channelInfoList),
+                  Container(
+                    height: 40.0,
+                    alignment: Alignment.center,
+                    child: Text(Strings.GROUP_BUG),
+                  ),
+                  GroupBuyView(_homeEntity.grouponBuyList),
                 ],
               ),
             ),
